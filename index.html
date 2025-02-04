@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Operators</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <h1>JAVASCRIPT OPERATORS</h1>
+
+        <div class="given">
+            <p>GIVEN: If A = 23.72 and B = 5.2, compute for the following:</p>
+        </div>
+
+        <div class="card-container">
+            <div class="card">
+                <h2>Arithmetic Operators</h2>
+                <p><strong>Exponent:</strong> <span id="exponent"></span></p>
+                <p><strong>Modulo:</strong> <span id="modulo"></span></p>
+                <button id="arithmeticBtn">Show Answer</button>
+            </div>
+
+            <div class="card">
+                <h2>Comparison Operators</h2>
+                <p>Is <strong>A</strong> greater than <strong>B</strong>? <span id="greater"></span></p>
+                <p>Is <strong>A</strong> equal to <strong>B</strong>? <span id="equal"></span></p>
+                <button id="comparisonBtn">Show Answer</button>
+            </div>
+
+            <div class="card">
+                <h2>Logical Operators</h2>
+                <p>True or False: <span id="logic1"></span></p>
+                <p>True or False: <span id="logic2"></span></p>
+                <button id="logicalBtn">Show Answer</button>
+            </div>
+        </div>
+
+        <button class="refresh" onclick="location.reload()">Refresh</button>
+    </div>
+
+    <footer class="footer">
+        Rivera Benigno Ignacio | 9-Sapphire
+    </footer>
+
+    <script>
+        let A = 23.72;
+        let B = 5.2;
+
+        document.getElementById("arithmeticBtn").onclick = () => {
+            document.getElementById("exponent").textContent = Math.pow(A, B).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+            document.getElementById("modulo").textContent = (A % B).toFixed(2);
+        };
+
+        document.getElementById("comparisonBtn").onclick = () => {
+            document.getElementById("greater").textContent = A > B;
+            document.getElementById("equal").textContent = A === B;
+        };
+
+        document.getElementById("logicalBtn").onclick = () => {
+            document.getElementById("logic1").textContent = (A > B && B < 10);
+            document.getElementById("logic2").textContent = (A < B || B > 50);
+        };
+    </script>
+</body>
+</html>
